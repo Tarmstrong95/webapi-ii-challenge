@@ -1,11 +1,10 @@
 const express = require('express');
 
+const postRoutes = require('./Routes/postRoutes/postRoutes.js')
+
 const server = express();
 
-
-server.get('/', (req, res) => {
-    res.send({message: "Server up and running on Port 8000"})
-})
+server.use('/api/posts', postRoutes);
 
 
 
